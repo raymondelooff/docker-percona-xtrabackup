@@ -14,9 +14,6 @@ RUN apt-get update && \
     apt-get install -y percona-xtrabackup-24 && \
     apt-get clean
 
-ENV DATA_DIR /var/lib/mysql
-ENV TARGET_DIR /target
-
 VOLUME /var/lib/mysql /target
 
 ENTRYPOINT ["xtrabackup", "--datadir=/var/lib/mysql", "--target-dir=/target"]
